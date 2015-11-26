@@ -1,0 +1,19 @@
+<link rel="stylesheet" type="text/css" href="stylesheets/user.css">
+<div class="wrapper">
+    <div class="user_info">
+        <div>
+            <img ng-src="{{user_data.image}}" class="user_image">
+            <span class="user_name">{{user_data.name}}</span>
+            <img src="images/setting.png" class="setting">
+        </div>
+        <form action="/settings/user" method="post" accept-charset="utf-8" enctype="multipart/form-data">
+            image:
+            <input type="file" name="image" />
+            <br />
+            <input type="submit" value="setting" />
+        </form>
+    </div>
+    <div class="info_detail">
+    </div>
+    {{user_data.image}}
+</div>

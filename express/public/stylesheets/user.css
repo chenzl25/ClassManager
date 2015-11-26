@@ -1,0 +1,24 @@
+.wrapper {
+  width: 600px;
+  height: 400px;
+  margin: 100px auto 0; }
+
+.user_info {
+  width: 200px;
+  height: 400px;
+  float: left;
+  background: #2B2F35;
+  .user_image-width: 50px;
+  .user_image-height: 50px; }
+  .user_info .user_name {
+    color: white;
+    font-family: sans-serif;
+    font-size: 20px; }
+
+.info_detail {
+  width: 400px;
+  height: 400px;
+  float: right;
+  background: #eee; }
+
+/*# sourceMappingURL=user.css.map */
