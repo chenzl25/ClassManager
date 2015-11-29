@@ -6,8 +6,9 @@ var classManagerApp = angular.module('classManagerApp', [
   'ngRoute',
   // 'classManagerAnimations',
   'classManagerControllers',
-  // 'classManagerFilters',
-  'classManagerServices'
+  'classManagerFilters',
+  'classManagerServices',
+  'classManagerDirectives'
 ]);
 
 classManagerApp.config(['$routeProvider',
@@ -28,6 +29,10 @@ classManagerApp.config(['$routeProvider',
       when('/user', {
         templateUrl: 'partials/user.html',
         controller: 'UserCtrl'
+      }).
+      when('/settings/user', {
+        templateUrl: 'partials/settings_user.html',
+        controller: 'SettingsUserCtrl'
       }).
       otherwise({
         redirectTo: '/'

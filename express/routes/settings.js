@@ -101,7 +101,7 @@ router.get('/user', function(req, res) {
 });
 
 router.post('/user',users_upload.single('image'),function(req,res) {
-    // console.log(req.body);
+  console.log(req.body);
   res.setHeader('Content-type','application/json');
   if (req.unformat_upload === true) {
     var result = {};

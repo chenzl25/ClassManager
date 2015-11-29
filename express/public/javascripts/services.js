@@ -26,7 +26,9 @@ classManagerServices.factory('User', ['$http',
  				return $http({
  					method : 'POST',
  					url : '/settings/user',
- 					data : data
+ 					data : data,
+ 					transformRequest: angular.identity,
+                	headers: {'Content-Type': undefined}
  				})
  			},
  			update_homework: function(homework_id, data) {
