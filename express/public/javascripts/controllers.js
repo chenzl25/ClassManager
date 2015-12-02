@@ -22,12 +22,12 @@ classManagerControllers.controller('LoginCtrl', ['$scope', 'User', 'Organization
         $scope.login = function() {
             // if($scope.login_form.$invalid) return;
             User.login({
-                // account: $scope.account,
-                // password: $scope.password,
+                 account: $scope.account,
+                 password: $scope.password,
                 // account: '14331048',
                 // password: '036713',
-                account: 'myuser15',
-                password: 'myuser15'
+               // account: 'myuser15',
+               // password: 'myuser15'
             }).success(function(data, status, headers, config) {
                 if (data.error === false) {
                     User.search_myself().success(function(data, status, headers, config) {
