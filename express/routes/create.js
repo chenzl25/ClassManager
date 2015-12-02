@@ -81,7 +81,20 @@ router.post('/organization/:account/homework', function(req, res) {
         }
         input.name = req.body.name || null;
         input.content = req.body.content || null;
-        input.deadline = Date(req.body.dealine) || null;
+        // input.deadline = Date(req.body.dealine) || null;
+        if (req.body.deadline) {
+            var deadline = parseInt(req.body.deadline);
+            input.deadline = new Date(deadline);
+            if (input.deadline.getTime === NaN) {
+                    result.error = true;
+                    result.message = "illeagal deadline";
+                    res.end(JSON.stringify(result));
+                    handle_wrong_upload();
+                    return;
+            }
+        } else {
+            input.deadline = null;
+        }
         input.unlooks = data_o.members;
         if (input.name === null || input.content === null) {
             result.error = true;
@@ -143,7 +156,20 @@ router.post('/organization/:account/notice', notices_upload.single('image'),func
         input.name = req.body.name || null;
         input.content = req.body.content || null;
         input.image = req.body.image || null;
-        input.deadline = Date(req.body.dealine) || null;
+        // input.deadline = Date(req.body.dealine) || null;
+        if (req.body.deadline) {
+            var deadline = parseInt(req.body.deadline);
+            input.deadline = new Date(deadline);
+            if (input.deadline.getTime === NaN) {
+                    result.error = true;
+                    result.message = "illeagal deadline";
+                    res.end(JSON.stringify(result));
+                    handle_wrong_upload();
+                    return;
+            }
+        } else {
+            input.deadline = null;
+        }
         input.unlooks = data_o.members;
         if (input.name === null || input.content === null) {
             result.error = true;
@@ -189,7 +215,20 @@ router.post('/organization/:account/vote', function(req, res) {
 
         input.name = req.body.name || null;
         input.content = req.body.content || null;
-        input.deadline = Date(req.body.dealine) || null;
+        // input.deadline = Date(req.body.dealine) || null;
+        if (req.body.deadline) {
+            var deadline = parseInt(req.body.deadline);
+            input.deadline = new Date(deadline);
+            if (input.deadline.getTime === NaN) {
+                    result.error = true;
+                    result.message = "illeagal deadline";
+                    res.end(JSON.stringify(result));
+                    handle_wrong_upload();
+                    return;
+            }
+        } else {
+            input.deadline = null;
+        }
         if (input.name === null || input.content === null) {
             result.error = true;
             result.message = "the name and content of the vote cann't be empty ";

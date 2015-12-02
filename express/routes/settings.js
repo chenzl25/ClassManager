@@ -176,8 +176,11 @@ router.post('/user',users_upload.single('image'),function(req,res) {
               if (datas) {
                 for (i = 0; i < datas.length; i++) {
                   for (var j = 0; j < datas[i].members.length; j++) {
-                    datas[i].members[j].student_id = data_u.student_id;
-                    datas[i].members[j].image = data_u.image;
+                    if (datas[i].members[j].account === data_u.account) {
+                      datas[i].members[j].student_id = data_u.student_id;
+                      datas[i].members[j].image = data_u.image;
+                      break;
+                    }
                   }
                   datas[i].save(tools.invalid_data_handler);
                 }

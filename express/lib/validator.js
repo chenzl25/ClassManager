@@ -148,7 +148,7 @@ var validator = {
 		if (accessible === null) {
 			return;
 		}
-		if (accessible !== true || accessible !== false) {
+		if (accessible !== 'true' || accessible !== 'false') {
 			result.error = true;
 			result.message += 'wrong format for the accessible;';			
 		}

@@ -278,7 +278,8 @@ router.post('/organization/:account/notice/:id',notices_upload.any(),function(re
         input.name = req.body.name || null;
         input.content = req.body.content || null;
         if (req.body.deadline) {
-            input.deadline = new Date(req.body.deadline);
+            var deadline = parseInt(req.body.deadline);
+            input.deadline = new Date(deadline);
             if (input.deadline.getTime === NaN) {
                     result.error = true;
                     result.message = "illeagal deadline";
@@ -365,7 +366,8 @@ router.post('/organization/:account/homework/:id',function(req, res) {
         input.name = req.body.name || null;
         input.content = req.body.content || null;
         if (req.body.deadline) {
-            input.deadline = new Date(req.body.deadline);
+            var deadline = parseInt(req.body.deadline);
+            input.deadline = new Date(deadline);
             if (input.deadline.getTime === NaN) {
                     result.error = true;
                     result.message = "illeagal deadline";
@@ -458,7 +460,8 @@ router.post('/organization/:account/vote/:id',function(req, res) {
             }
         }
         if (req.body.deadline) {
-            input.deadline = new Date(req.body.deadline);
+            var deadline = parseInt(req.body.deadline);
+            input.deadline = new Date(deadline);
             if (input.deadline.getTime === NaN) {
                     result.error = true;
                     result.message = "illeagal deadline";
