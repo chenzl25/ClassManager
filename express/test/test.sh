@@ -9,14 +9,14 @@
 # echo '\n'
 # # login user
 
-curl  -c cookie15.file --data 'account=myuser15&password=myuser15' \
-http://localhost:3000/login/user
-echo '\n'
+# curl  -c cookie15.file --data 'account=myuser15&password=myuser15' \
+# http://localhost:3000/login/user
+# echo '\n'
 
 
-curl  -c cookie11.file --data 'account=myuser11&password=myuser11' \
-http://localhost:3000/login/user
-echo '\n'
+# curl  -c cookie11.file --data 'account=myuser11&password=myuser11' \
+# http://localhost:3000/login/user
+# echo '\n'
 
 curl  -c cookie48.file --data 'account=14331048&password=036713' \
 http://localhost:3000/login/user
@@ -24,24 +24,24 @@ echo '\n'
 
 # # register organization
 
-curl  -b cookie48.file  --data 'account=mygroup48'  \
-http://localhost:3000/register/organization
-echo '\n'
+# curl  -b cookie48.file  --data 'account=mygroup48'  \
+# http://localhost:3000/register/organization
+# echo '\n'
 
 # # setting organization
 
-curl -b cookie48.file --form student_id=14331048 --form image=@d.png --form name=Dylan \
+curl -b cookie48.file --form accessible=true \
 http://localhost:3000/settings/user
 
-curl  -b cookie48.file --form name=group48 --form image=@b.png --form password=123456 \
-http://localhost:3000/settings/organization/mygroup48
-echo '\n'
+# curl  -b cookie48.file --form name=group48 --form image=@b.png --form password=123456 \
+# http://localhost:3000/settings/organization/mygroup48
+# echo '\n'
 
 # #join
 
-curl -b cookie11.file --data 'password=123456' \
-http://localhost:3000/join/organization/mygroup48
-echo '\n'
+# curl -b cookie11.file --data 'password=123456' \
+# http://localhost:3000/join/organization/mygroup48
+# echo '\n'
 # curl -b cookie10.file \
 # http://localhost:3000/join/organization/mygroup23
 # echo '\n'

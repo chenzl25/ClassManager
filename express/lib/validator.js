@@ -139,7 +139,7 @@ var validator = {
 		if (gender === null) {
 			return;
 		}
-		if (gender !== 'male' || gender != 'female') {
+		if (gender !== 'male' && gender !== 'female') {
 			result.error = true;
 			result.message += 'wrong format for the gender;';
 		}
@@ -148,7 +148,7 @@ var validator = {
 		if (accessible === null) {
 			return;
 		}
-		if (accessible !== 'true' || accessible !== 'false') {
+		if (accessible !== 'true' && accessible !== 'false') {
 			result.error = true;
 			result.message += 'wrong format for the accessible;';			
 		}
