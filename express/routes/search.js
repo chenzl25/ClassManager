@@ -262,10 +262,13 @@ router.get('/organization/:account/homework/:id', function(req, res) {
 						}
 					}
 					User.findByAccount(user_data.account, function(err, data_u) {
-						data_u.homeworks.id(id).unlook = false;
-						tools.update_status(data_u, 'homeworks');
-						data_u.save();
-						user_data = data_u;
+						var user_homework = data_u.homeworks.id(id);
+						if (user_homework) {
+							user_homework.unlook = false;
+							tools.update_status(data_u, 'homeworks');
+							data_u.save();
+							user_data = data_u;
+						}
 					});
 					data_o.save(tools.invalid_data_handler);
 				}
