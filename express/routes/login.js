@@ -38,13 +38,17 @@ router.post('/user', function(req,res) {
 			        } else {
 			        	req.session.user_data = data;
 			  			result.message = 'login successfully';
+			  			result.user_data = data;
+			  			data.status = [];
 			  			data.status.push({name:'self',code:Math.random()});
 			  			data.status.push({name:'homeworks', code:Math.random()});
 			  			data.status.push({name:'relationships', code:Math.random()});
+			  			data.save();
 			  			result.user_status = data.status;
 			            res.end(JSON.stringify(result));
 			        }
 	  			} else {
+	  				result.error = true;
 		        	result.message = 'the password is not correct;';
 		            res.end(JSON.stringify(result));
 	  			}

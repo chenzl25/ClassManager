@@ -4,12 +4,12 @@ var express = require('express');
 var router = express.Router();
 var config = require('../config');
 var file = null;
-file = fs.readFileSync(__dirname + '/../public/index.html', 'utf8');
-/* GET home page. */
-router.get('/', function(req, res, next) {
-		res.setHeader('Content-type','text/html');
-    res.end(file);
-});
+// 	file = fs.readFileSync(path.resolve('..', 'dist', 'index.html'), 'utf8');
+// /* GET home page. */
+// router.get('/', function(req, res, next) {
+// 		res.setHeader('Content-type','text/html');
+//     res.end(file);
+// });
 // router.get('/download',function(req, res) {
 //   var options = {
 //     root: path.join(__dirname,'..' , '/uploads/'),
